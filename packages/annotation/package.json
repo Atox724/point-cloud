@@ -1,0 +1,16 @@
+{
+  "name": "annotation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/es.js",
+  "typings": "./dist/types/index.d.ts",
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "three": "^0.166.1"
+  },
+  "devDependencies": {
+    "@types/three": "^0.166.0"
+  }
+}
