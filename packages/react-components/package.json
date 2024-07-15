@@ -1,0 +1,32 @@
+{
+  "name": "@p-cloud/react-components",
+  "version": "0.0.1-alpha.0",
+  "description": "",
+  "type": "module",
+  "main": "./dist/umd/index.js",
+  "module": "./dist/es/index.js",
+  "typings": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/umd/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "rimraf dist && vite build && tsc --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "@p-cloud/annotation": "workspace:*",
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@rollup/plugin-inject": "^5.0.5",
+    "less": "^4.2.0",
+    "vite-plugin-css-injected-by-js": "^3.5.1"
+  },
+  "files": [
+    "dist"
+  ]
+}

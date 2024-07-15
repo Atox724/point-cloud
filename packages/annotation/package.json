@@ -1,16 +1,32 @@
 {
-  "name": "annotation",
-  "version": "1.0.0",
+  "name": "@p-cloud/annotation",
+  "version": "0.0.1",
   "description": "",
-  "main": "./dist/es.js",
+  "type": "module",
+  "main": "./dist/umd/index.js",
+  "module": "./dist/es/index.js",
   "typings": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/umd/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
   "scripts": {
-    "build": "vite build"
+    "build": "rimraf dist && vite build && tsc --emitDeclarationOnly",
+    "lint": "pnpm prettier && pnpm eslint && pnpm check",
+    "prettier": "prettier --ignore-path ../../.eslintignore . --write",
+    "eslint": "eslint --ignore-path ../../.eslintignore . --fix",
+    "check": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
     "three": "^0.166.1"
   },
   "devDependencies": {
     "@types/three": "^0.166.0"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
